@@ -7,15 +7,16 @@ function findGift(gifts, giftName, index = 0) {
     if (index === gifts.length) {
         return `${giftName} no está en la lista.`;
     }
-  // TODO: Incluye el caso base donde se llega al final de la lista.
-  // TODO: Incluye el caso base donde se encuentra el regalo.
-  // TODO: Realiza la llamada recursiva para seguir buscando el regalo.
+
+    if (gifts[index]===giftName){
+        return `El regalo ${giftName} está en la posición ${index} de la lista.`;
+    }
+
+    return findGift(gifts, giftName, index+1);
+
 }
-// Casos de ejemplo:
-// Llama a la función con los datos de entrada y muestra el resultado en la consola.
-// Llama a la función y prueba con diferentes regalos
+
 let giftToFind = "Lego";
-console.log(findGift(gifts, giftToFind));
 // Salida esperada:
 // "Lego está en la posición 3."
 
@@ -23,3 +24,5 @@ console.log(findGift(gifts, giftToFind));
 giftToFind = "Camión";
 // Salida esperada:
 // "Camión no está en la lista."
+
+console.log(findGift(gifts, giftToFind));
